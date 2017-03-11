@@ -1,0 +1,3 @@
+
+# FZF
+FZF_INSTALL_DIRECTORY=~/.fzf
