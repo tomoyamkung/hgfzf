@@ -7,7 +7,7 @@ if [[ -z "${DOTPATH:-}" ]]; then
 fi
 
 # ライブラリファイルを読み込む
-. ${DOTPATH}/etc/lib/dry_run.sh
+. ${DOTPATH}/bin/dry_run.sh
 
 function usage() {
   cat <<EOF 1>&2
@@ -49,7 +49,7 @@ do
 done
 
 # 変数 $command がブランクの場合は `hg st` を実行する
-if [ "$command" == "" ]; then
+if [[ "$command" == "" ]]; then
   ${dryrun} hg st
   exit 0
 fi

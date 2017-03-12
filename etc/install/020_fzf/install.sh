@@ -7,8 +7,8 @@ if [[ -z "${DOTPATH:-}" ]]; then
 fi
 
 # ライブラリファイルを読み込む
-. ${DOTPATH}/etc/lib/is_installed.sh
-. ${DOTPATH}/etc/lib/dry_run.sh
+. ${DOTPATH}/bin/is_installed.sh
+. ${DOTPATH}/bin/dry_run.sh
 
 function usage() {
   cat <<EOF 1>&2
