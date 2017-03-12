@@ -7,13 +7,16 @@ if [[ -z "${DOTPATH:-}" ]]; then
 fi
 
 # ライブラリファイルを読み込む
-. ${DOTPATH}/etc/lib/create_dir.sh
-. ${DOTPATH}/etc/lib/dry_run.sh
+. ${DOTPATH}/bin/create_dir.sh
+. ${DOTPATH}/bin/dry_run.sh
 
 function usage() {
   cat <<EOF 1>&2
 Description:
-  $(basename ${0}) は "hg commit --close-branch" を実行するスクリプトである。
+  $(basename ${0}) は以下のディレクトリにあるシェルスクリプトのシンボリックリンクを作成するスクリプトである。
+    - bin/mercurial/
+  シンボリックリンクの作成先ディレクトリは以下とする（ディレクトリが存在しない場合は作成する）。
+    - ~/bin/mercurial
 
 Usage:
   $(basename ${0}) [-h] [-x]
@@ -41,7 +44,7 @@ done
 # シンボリックリンクの作成先ディレクトリを作成する
 ${dryrun} create_dir ${MERCURIAL_DIRECTORY}
 
-for script in `find ${DOTPATH}/etc/mercurial -type f -name "*.sh"`
+for script in `find ${DOTPATH}/bin/mercurial -type f -name "*.sh"`
 do
   x=`echo ${script} | awk -F'/' '{print $NF}' | awk -F'.' '{print $1}'`  # スクリプトファイル名を抜き出す
   ${dryrun} ln -sf ${script}  ${MERCURIAL_DIRECTORY}/${x}
