@@ -43,6 +43,6 @@ done
 if [ ! -z ${dryrun} ]; then
   echo "${MERCURIAL_DIRECTORY} -> ~/.bashrc"
 else
-  echo "PATH=$PATH:${MERCURIAL_DIRECTORY}" >> ~/.bashrc
+  echo 'PATH=$PATH:'${MERCURIAL_DIRECTORY} >> ~/.bashrc
 fi
 exit 0
