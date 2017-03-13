@@ -40,9 +40,12 @@ done
 # 設定ファイルを読み込む
 . ${DOTPATH}/etc/config/deploy_config.sh
 
-if [ ! -z ${dryrun} ]; then
+if [[ ! -z ${dryrun} ]]; then
   echo "${MERCURIAL_DIRECTORY} -> ~/.bashrc"
 else
-  echo 'PATH=$PATH:'${MERCURIAL_DIRECTORY} >> ~/.bashrc
+  grep -q "${MERCURIAL_DIRECTORY}" ~/.bashrc
+  if [[ $? -eq 1  ]]; then
+    echo 'PATH=$PATH:'${MERCURIAL_DIRECTORY} >> ~/.bashrc
+  fi
 fi
 exit 0
