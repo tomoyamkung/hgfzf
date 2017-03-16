@@ -39,7 +39,7 @@ done
 # FZF を使ってブランチを絞り込む
 branch=$(hg branches | fzf --exit-0 --select-1 --ansi)
 # 存在しないファイルを指定された場合は処理を終了する
-[[ -z ${file_name} ]] && exit 1
+[[ -z ${branch} ]] && exit 1
 
 branch=$(echo ${branch} | awk '{print $1}')
 ${dryrun} hg update ${branch}
