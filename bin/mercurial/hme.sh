@@ -36,7 +36,8 @@ EOF
   exit 0
 }
 
-
+commit_message=""
+is_push=
 while getopts chm:px OPT
 do
   case "$OPT" in
