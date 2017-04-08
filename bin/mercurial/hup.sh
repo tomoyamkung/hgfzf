@@ -18,18 +18,21 @@ Description:
   移動先のブランチは FZF により絞り込んで指定するため $(basename ${0}) の引数には指定しない。
 
 Usage:
-  $(basename ${0}) [-h] [-x]
+  $(basename ${0}) [-c] [-h] [-x]
 
 Options:
+  -c  close されたブランチも対象とする
   -h  print this
   -x  dry-run モードで実行する
 EOF
   exit 0
 }
 
-while getopts hx OPT
+close_branch=
+while getopts chx OPT
 do
   case "$OPT" in
+    c) close_branch="-c" ;;
     h) usage ;;
     x) enable_dryrun ;;
     \?) usage ;;
@@ -37,7 +40,7 @@ do
 done
 
 # FZF を使ってブランチを絞り込む
-branch=$(hg branches | fzf --exit-0 --select-1 --ansi)
+branch=$(hg branches ${close_branch} | fzf --exit-0 --select-1 --ansi)
 # 存在しないファイルを指定された場合は処理を終了する
 [[ -z ${branch} ]] && exit 1
 
