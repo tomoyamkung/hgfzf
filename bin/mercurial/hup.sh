@@ -18,7 +18,7 @@ Description:
   移動先のブランチは FZF により絞り込んで指定するため $(basename ${0}) の引数には指定しない。
 
 Usage:
-  $(basename ${0})
+  $(basename ${0}) [-h] [-x]
 
 Options:
   -h  print this
