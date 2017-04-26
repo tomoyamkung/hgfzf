@@ -2,7 +2,7 @@
 
 # プロジェクトのルートディレクトリを設定する
 if [[ -z "${DOTPATH:-}" ]]; then
-  DOTPATH=~/mercurial_tools
+  DOTPATH=~/hgfzf
   export DOTPATH
 fi
 
