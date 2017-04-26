@@ -1,6 +1,6 @@
 # mercurial_tools
 
-mercurial_tools とは Mercurial をリポジトリとした開発作業で使用する `hg` コマンドをラップするスクリプトを提供するプロジェクトである。  
+hgfzf とは Mercurial をリポジトリとした開発作業で使用する `hg` コマンドをラップするスクリプトを提供するプロジェクトである。  
 ブランチの手入力を出来るだけ抑えることを目的としており [fzf](https://github.com/junegunn/fzf) を使ったフィルタリングでブランチを特定するようになっている。
 
 
@@ -9,8 +9,8 @@ mercurial_tools とは Mercurial をリポジトリとした開発作業で使�
 セットアップ手順は以下の通り。
 
 ```
-$ git clone https://github.com/tomoyamkung/mercurial_tools.git
-$ cd mercurial_tools
+$ git clone https://github.com/tomoyamkung/hgfzf.git
+$ cd hgfzf
 $ ./etc/install.sh  # 本プロジェクトが提供する機能に必要なソフトウェアのインストールを行う
 $ ./etc/deploy.sh  # 本プロジェクトが提供する機能を設定にする
 $ . ~/.bashrc
@@ -38,11 +38,11 @@ etc/deploy.sh を実行すると ~/bin/mercurial/ ディレクトリに以下の
 ```
 $ ll ~/bin/mercurial
 :
-... hcb -> /path/to/mercurial_tools/bin/mercurial/hcb.sh
-... hme -> /path/to/mercurial_tools/bin/mercurial/hme.sh
-... hpu -> /path/to/mercurial_tools/bin/mercurial/hpu.sh
-... hst -> /path/to/mercurial_tools/bin/mercurial/hst.sh
-... hup -> /path/to/mercurial_tools/bin/mercurial/hup.sh
+... hcb -> /path/to/hgfzf/bin/mercurial/hcb.sh
+... hme -> /path/to/hgfzf/bin/mercurial/hme.sh
+... hpu -> /path/to/hgfzf/bin/mercurial/hpu.sh
+... hst -> /path/to/hgfzf/bin/mercurial/hst.sh
+... hup -> /path/to/hgfzf/bin/mercurial/hup.sh
 ```
 
 各スクリプトのサマリは以下の通り。
