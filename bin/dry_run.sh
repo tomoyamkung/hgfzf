@@ -8,7 +8,7 @@ Usage:
   dry-run を実行するための手順は以下の通り。
 
   1. 本ライブラリを読み込む
-    - . ~/mercurial_tools/etc/lib/dry_run.sh
+    - . ~/hgfzf/etc/lib/dry_run.sh
   2. enable_dryrun() 関数を実行する
   3. dry-run を実行したい場所で if を実行する
 
