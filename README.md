@@ -1,4 +1,4 @@
-# mercurial_tools
+# hgfzf
 
 hgfzf とは Mercurial をリポジトリとした開発作業で使用する `hg` コマンドをラップするスクリプトを提供するプロジェクトである。  
 ブランチの手入力を出来るだけ抑えることを目的としており [fzf](https://github.com/junegunn/fzf) を使ったフィルタリングでブランチを特定するようになっている。
